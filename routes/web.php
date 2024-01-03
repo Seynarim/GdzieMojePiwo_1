@@ -14,7 +14,7 @@ route::get('/', function()  {
 
 // NAVIGATION CONROLLER ROUTES
 Route::get('/home',     [NavController::class,'Home'])      ->name('Home');
-Route::get('/bars',     [NavController::class,'Bars'])      ->name('Bars');
+Route::get('/pubs',     [NavController::class,'Pubs'])      ->name('Pubs');
 Route::get('/aboutus',  [NavController::class,'aboutus'])   ->name('AboutUs');
 Route::get('/login',    [NavController::class,'Login'])     ->name('Login');
 

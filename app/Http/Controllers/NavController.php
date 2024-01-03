@@ -13,8 +13,8 @@ class NavController extends Controller
         return view('Admin');
     }
 
-    public function Bars(){
-        return view('bars.index');
+    public function Pubs(){
+        return view('Pubs.index');
     }
 
     public function AboutUs(){
