@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeersController;
+use App\Http\Controllers\PubsController;
 use App\Http\Controllers\NavController;
 
 route::get('/', function()  {
@@ -14,7 +15,6 @@ route::get('/', function()  {
 
 // NAVIGATION CONROLLER ROUTES
 Route::get('/home',     [NavController::class,'Home'])      ->name('Home');
-Route::get('/pubs',     [NavController::class,'Pubs'])      ->name('Pubs');
 Route::get('/aboutus',  [NavController::class,'aboutus'])   ->name('AboutUs');
 Route::get('/login',    [NavController::class,'Login'])     ->name('Login');
 
@@ -33,6 +33,22 @@ Route::put('/beers/{beer}/update', [BeersController::class, 'update'])->name('be
 Route::delete('/beers/{beer}/delete', [BeersController::class, 'delete'])->name('beers.delete');
 // Details
 Route::get('/beer/{beer}/details', [BeersController::class, 'details'])->name('beer.details');
+
+
+//PUBS CONTROLLER ROUTES
+Route::get('/pubs',     [PubsController::class,'index'])->name('Pubs.index');
+// Create
+Route::get('/pubs/create', [PubsController::class, 'create'])->name('Pubs.create');
+// create->save
+Route::post('/Pubs', [PubsController::class, "store"]) ->name('Pubs.store');
+// Edit
+Route::get('/Pubs/{Pub}/edit', [PubsController::class, 'edit'])->name('Pubs.edit');
+// update
+Route::put('/Pubs/{Pub}/update', [PubsController::class, 'update'])->name('Pubs.update');
+// delete
+Route::delete('/Pubs/{Pub}/delete', [PubsController::class, 'delete'])->name('Pubs.delete');
+// Details
+Route::get('/Pubs/{Pub}/details', [PubsController::class, 'details'])->name('Pubs.details');
 
 /* old ones
 Route::get('/admin/beer', [NavController::class,'AdminBeer'])->name('AdminBeer');

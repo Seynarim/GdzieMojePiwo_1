@@ -14,7 +14,7 @@ class Pubs extends Model
     'name',
     'adress',
     'adress_url',
-    'image url',
+    'image_url',
     'gmaps_url'
     ];
 }

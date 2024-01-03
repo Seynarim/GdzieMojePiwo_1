@@ -10,7 +10,7 @@
 
   <div>
     <a href="{{route('beers.index')}}"  class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2">beers</a>
-    <a href="{{route('Pubs')}}"         class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2">Pubs</a>
+    <a href="{{route('Pubs.index')}}"         class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2">Pubs</a>
     <a href="{{route('AboutUs')}}"      class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2">aboutus</a>
     <a href="{{route('Login')}}"        class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2">login</a>
   </div>

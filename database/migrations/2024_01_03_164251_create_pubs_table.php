@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('adress');
             $table->string('adress_url')->nullable();
-            $table->string('image_url');
+            $table->string('image_url')->nullable();
             $table->string('gmaps_url')->nullable();
             $table->timestamps();
         });
