@@ -3,8 +3,9 @@
 @section('content')
 
 <body>
-<h1>Edit a Pub</h1>
-<!-- check validation -->
+    <h1>Edit a Pub</h1>
+
+    <!-- Check validation errors -->
     <div>
         @if($errors->any())
         <ul>
@@ -14,55 +15,131 @@
         </ul>
         @endif
     </div>
+
     <!-- Form edit -->
-    <form method="post" action="{{route('Pubs.update', ['Pub' => $Pub])}}">
+    <form method="post" action="{{ route('Pubs.update', ['Pub' => $Pub]) }}">
         @csrf 
         @method('put')
-        <div>
-            <label>Name</label>
-            <input type="text" name="name" placeholder="Name" value="{{$Pub->name}}" />
-        </div>
-        <div>
-            <label>adress</label>
-            <input type="text" name="adress" placeholder="adress" value="{{$Pub->adress}}" />
-        </div>
-        <div>
-            <label>adress_url</label>
-            <input type="text" name="adress_url" placeholder="adress_url" value="{{$Pub->adress_url}}" />
-        </div>
-        <div>
-            <label>google_url</label>
-            <input type="text" name="google_url" placeholder="google_url" value="{{$Pub->google_url}}" />
-        </div>
-        <div>
-            <label> image_url </label>
-            <input type="text" name="image_url" placeholder="image_url" value="{{$Pub->image_url}}" />
-        </div>
-        <div>
-            <label 
-                for="beersselect"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >Select Beers:</label>
-            <select
-                id="countries_multiple" 
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                size-auto
-                name="beers[]" 
-                multiple>
-                @foreach($beers as $beer)
-                    <option value="{{ $beer->id }}" 
-                        {{ in_array($beer->id, $Pub->beers->pluck('id')->toArray()) ? 'selected' : '' }}>
-                        {{ $beer->name }}
-                    </option>
-                @endforeach
-            </select>
-        </div>
-        <div>
-            <input type="submit" value="Update" />
+
+        <table class="min-w-full">
+            <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+                <tr>
+                    <td class="px-6 py-4 whitespace-nowrap text-left">
+                        <label for="name" 
+                            class="block text-sm font-medium text-gray-700 dark:text-white">
+                            Name:
+                        </label>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <input type="text" 
+                            name="name" 
+                            placeholder="Name" 
+                            value="{{ $Pub->name }}" 
+                            class="border rounded p-2">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="px-6 py-4 whitespace-nowrap text-left">
+                        <label for="adress" 
+                            class="block text-sm font-medium text-gray-700 dark:text-white">
+                            Address:
+                        </label>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <input type="text" 
+                            name="adress" 
+                            placeholder="Address" 
+                            value="{{ $Pub->adress }}" 
+                            class="border rounded p-2">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="px-6 py-4 whitespace-nowrap text-left">
+                        <label for="adress_url" 
+                            class="block text-sm font-medium text-gray-700 dark:text-white">
+                            Address URL:
+                        </label>
+                    </td>
+                     <td class="px-6 py-4 whitespace-nowrap">
+                        <input type="text" 
+                            name="adress_url" 
+                            placeholder="Address URL" 
+                            value="{{ $Pub->adress_url }}" 
+                            class="border rounded p-2">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="px-6 py-4 whitespace-nowrap text-left">
+                        <label for="google_url" 
+                            class="block text-sm font-medium text-gray-700 dark:text-white">
+                            Google URL:
+                        </label>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <input type="text" 
+                            name="google_url" 
+                            placeholder="Google URL" 
+                            value="{{ $Pub->google_url }}" 
+                            class="border rounded p-2">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="px-6 py-4 whitespace-nowrap text-left">
+                        <label for="image_url" 
+                            class="block text-sm font-medium text-gray-700 dark:text-white">
+                            Image URL:
+                        </label>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <input type="text" 
+                            name="image_url" 
+                            placeholder="Image URL" 
+                            value="{{ $Pub->image_url }}" 
+                            class="border rounded p-2">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="px-6 py-4 whitespace-nowrap text-left">
+                        <label for="beersselect" 
+                            class="block text-sm font-medium text-gray-700 dark:text-white">
+                            Select Beers:
+                        </label>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+                                @foreach($beers as $beer)
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-left">
+                                            {{ $beer->name }}
+                                        </td>
+                                        <td class="px-2 py-1 whitespace-nowrap">
+                                            <input type="checkbox" 
+                                                class="h-6 w-6 text-blue-500 border-gray-300 rounded focus:ring focus:ring-blue-200"
+                                                name="beers[]" 
+                                                value="{{ $beer->id }}" 
+                                                {{ in_array($beer->id, $Pub->beers->pluck('id')->toArray()) ? 'checked' : '' }}>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="mt-4">
+            <input type="submit" 
+                value="Update" 
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
         </div>
     </form>
-
-
 
 </body>
 </html>
