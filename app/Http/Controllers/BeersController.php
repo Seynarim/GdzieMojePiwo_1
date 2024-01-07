@@ -67,9 +67,9 @@ class BeersController extends Controller
             $results = beer::where(function ($query) use ($searchTerm) {
                 $columns = Schema::getColumnListing('beers'); // Retrieve all columns in your table
     
-                foreach ($columns as $column) {
-                    $query->orWhere($column, 'like', '%' . $searchTerm . '%');
-                }
+                $query  
+                    ->orWhere('name', 'like', '%' . $searchTerm . '%')
+                    ->orWhere('producer', 'like', '%' . $searchTerm . '%');
             })->get();
         }
         return view('/home', compact('results'));
