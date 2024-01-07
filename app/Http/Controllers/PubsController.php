@@ -58,7 +58,8 @@ class PubsController extends Controller
     public function details(Pubs $Pub){
         $Pub = Pubs::findOrFail($Pub->id);
         $beers = $Pub->beers;
-        $modifiedIframe = str_replace('width="600" height="450"', 'width="300" height="200"', $Pub->gmaps_url);
+        $modifiedIframe = preg_replace('/width="[^"]*"/', 'width="300"', $Pub->gmaps_url);
+        $modifiedIframe = preg_replace('/height="[^"]*"/', 'height="200"', $modifiedIframe);
         return view('Pubs.details', compact('Pub', 'beers', 'modifiedIframe'));
     }
 
