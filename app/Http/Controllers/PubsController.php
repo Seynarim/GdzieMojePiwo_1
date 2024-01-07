@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pubs;
-
+use App\Models\Beer;
 class PubsController extends Controller
 {
     public function index(){
@@ -29,7 +29,8 @@ class PubsController extends Controller
     }
 
     public function edit(Pubs $Pub){
-        return view('Pubs.edit', ['Pub' => $Pub]);
+        $beers = Beer::all(); // Fetch all beers
+        return view('Pubs.edit', compact('Pub', 'beers'));
     }
 
     public function update(Pubs $Pub, Request $request){
@@ -41,8 +42,10 @@ class PubsController extends Controller
             'gmaps_url' => 'nullable',
 
         ]);
-
+        // Update pub attributes
         $Pub->update($data);
+        // Sync the associated beers
+        $Pub->beers()->sync($request->input('beers', []));
 
         return redirect(route('Pubs.index'))->with('success', 'Pub Updated Succesffully');
     }

@@ -18,8 +18,8 @@ class Pubs extends Model
     'gmaps_url'
     ];
 
-    public function beer()
+    public function beers()
     {
-        return $this->belongsToMany(Beer::class);
+        return $this->belongsToMany(Beer::class, 'beer_pubs', 'idp', 'idb');
     }
 }

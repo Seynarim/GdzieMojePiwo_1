@@ -74,5 +74,11 @@ class BeersController extends Controller
         }
         return view('/home', compact('results'));
     }
+    public function try(){
+    $beer = Beer::find(3); // Replace $beerId with the actual ID of the beer
+    $pubs = [12]; // Replace with the IDs of the pubs you want to associate
 
+    $beer->pubs()->sync($pubs);
+    return view('/home');
+    }
 }

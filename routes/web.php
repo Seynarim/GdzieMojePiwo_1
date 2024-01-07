@@ -9,6 +9,8 @@ route::get('/', function()  {
     return view('Home');
 });
 
+//temporary
+Route::get('/Cmd1', [BeersController::class, 'try']);
 
 
 //Route::get('Nazwa wprzeglądarce', [NavController::class,wywolanie])->name(nazwawew);

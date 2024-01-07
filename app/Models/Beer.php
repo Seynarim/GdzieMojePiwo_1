@@ -21,7 +21,7 @@ class Beer extends Model
 
     public function pubs()
     {
-        return $this->belongsToMany(Pubs::class);
+        return $this->belongsToMany(Pubs::class, 'beer_pubs', 'idb', 'idp');
     }
 }
 
