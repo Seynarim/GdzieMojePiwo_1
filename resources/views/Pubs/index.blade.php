@@ -30,7 +30,7 @@
             <th scope="col" class="px-6 py-3">Name</th>
             <th scope="col" class="px-6 py-3">Adress</th>
             <th scope="col" class="px-6 py-3">Adressurl</th>
-            <th scope="col" class="px-6 py-3">gmpasurl</th>
+            <!-- <th scope="col" class="px-6 py-3">gmpasurl</th> -->
             <th scope="col" class="px-6 py-3 text-center">Image</th>
             <th scope="col" class="px-6 py-3">Edit</th>
             <th scope="col" class="px-6 py-3">Delete</th>
@@ -42,7 +42,7 @@
                         <td class="px-6 py-4 dark:text-white">{{$Pub->name}}</td>
                         <td class="px-6 py-4">{{$Pub->adress}}</td>
                         <td class="px-6 py-4">{{$Pub->adress_url}}</td>
-                        <td class="px-6 py-4">{{$Pub->gmaps_url}}</td>
+                        <!-- <td class="px-6 py-4">{{$Pub->gmaps_url}}</td> -->
                         <!-- Image -->
                         <td class=> 
                             <a href="{{ route('Pubs.details', ['Pub' => $Pub]) }}">
