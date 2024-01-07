@@ -42,7 +42,8 @@
                                 </p>
                             </div>
                             <div class="flex items-center justify-end">
-                                <a href="#" class="absolute bottom-0 right-0 px-3 py-4 text-sm text-gray-100 bg-indigo-600 rounded-tl-2xl rounded-br-2xl hover:bg-indigo-700 hover:text-gray-100">
+                                <a href="{{ route('beer.details', ['beer' => $result]) }}"
+                                    class="absolute bottom-0 right-0 px-3 py-4 text-sm text-gray-100 bg-yellow-600 rounded-tl-2xl rounded-br-2xl hover:bg-indigo-700 hover:text-gray-100">
                                     Wyszukaj Puby
                                 </a>
                             </div>
