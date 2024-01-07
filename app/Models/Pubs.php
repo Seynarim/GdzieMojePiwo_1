@@ -17,4 +17,9 @@ class Pubs extends Model
     'image_url',
     'gmaps_url'
     ];
+
+    public function beer()
+    {
+        return $this->belongsToMany(Beer::class);
+    }
 }

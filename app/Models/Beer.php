@@ -19,5 +19,9 @@ class Beer extends Model
     'ImageUrl',
     ];
 
-    
+    public function pubs()
+    {
+        return $this->belongsToMany(Pubs::class);
+    }
 }
+
