@@ -113,23 +113,42 @@
                     <td class="px-6 py-4 whitespace-nowrap">
                         <table class="min-w-full divide-y divide-gray-200">
                             <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
-                                @foreach($beers as $beer)
+                                @php
+                                    $sortedBeers = $beers->toArray();
+                                    usort($sortedBeers, function ($a, $b) use ($Pub) {
+                                        $aChecked = in_array($a['id'], $Pub->beers->pluck('id')->toArray());
+                                        $bChecked = in_array($b['id'], $Pub->beers->pluck('id')->toArray());
+
+                                        if ($aChecked && !$bChecked) {
+                                            return -1; // $a comes first if it's checked and $b is not
+                                        } elseif (!$aChecked && $bChecked) {
+                                            return 1; // $b comes first if it's checked and $a is not
+                                        } else {
+                                            return strcmp($a['name'], $b['name']); // Alphabetical order if both checked or unchecked
+                                        }
+                                    });
+                                @endphp
+
+                                @foreach($sortedBeers as $beer)
                                     <tr>
                                         <td class="px-6 py-4 whitespace-nowrap text-left">
-                                            {{ $beer->name }}
+                                            {{ $beer['name'] }}
                                         </td>
-                                        <td class="px-2 py-1 whitespace-nowrap">
-                                            <input type="checkbox" 
-                                                class="h-6 w-6 text-blue-500 border-gray-300 rounded focus:ring focus:ring-blue-200"
-                                                name="beers[]" 
-                                                value="{{ $beer->id }}" 
-                                                {{ in_array($beer->id, $Pub->beers->pluck('id')->toArray()) ? 'checked' : '' }}>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <label class="inline-flex items-center">
+                                                <input type="checkbox" 
+                                                    class="h-6 w-6 text-blue-500 border-gray-300 rounded focus:ring focus:ring-blue-200"
+                                                    name="beers[]" 
+                                                    value="{{ $beer['id'] }}" 
+                                                    {{ in_array($beer['id'], $Pub->beers->pluck('id')->toArray()) ? 'checked' : '' }}>
+                                            </label>
                                         </td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
                     </td>
+
                 </tr>
             </tbody>
         </table>
