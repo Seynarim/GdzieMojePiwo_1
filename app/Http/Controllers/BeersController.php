@@ -54,10 +54,14 @@ class BeersController extends Controller
         return redirect(route('beers.index'))->with('success', 'beer deleted Succesffully');
     }
 
-    public function details(beer $beer){
-        //$beer = Beer::findOrFail($beer);
-        return view('beers.details', ['beer' => $beer]);
+    public function details(beer $beer)
+    {
+        $beer = Beer::with('pubs')->findOrFail($beer->id);
+        $pubs = $beer->pubs;
+    
+        return view('beers.details', compact('beer', 'pubs'));
     }
+        
     public function search(Request $request)
     {
         $searchTerm = $request->input('search'); // Assuming you're using a form with a 'search' input field

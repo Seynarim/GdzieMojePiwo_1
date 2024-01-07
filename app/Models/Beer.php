@@ -23,5 +23,6 @@ class Beer extends Model
     {
         return $this->belongsToMany(Pubs::class, 'beer_pubs', 'idb', 'idp');
     }
+
 }
 
