@@ -6,10 +6,12 @@
 
 <h1>home</h1>
 
-Welcome to the Jungle
+<h1> wyszukiwarka </h1>
 
+@include('search.index') 
 
-@stop
+@endsection
+
 
 
 

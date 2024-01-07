@@ -33,6 +33,8 @@ Route::put('/beers/{beer}/update', [BeersController::class, 'update'])->name('be
 Route::delete('/beers/{beer}/delete', [BeersController::class, 'delete'])->name('beers.delete');
 // Details
 Route::get('/beer/{beer}/details', [BeersController::class, 'details'])->name('beer.details');
+//Search
+Route::get('/search/BeerSearch', [Beerscontroller::class, 'search']) -> name('search.beer');
 
 
 //PUBS CONTROLLER ROUTES

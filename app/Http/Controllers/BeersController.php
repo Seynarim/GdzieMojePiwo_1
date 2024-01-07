@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Beer;
-
+use Illuminate\Support\Facades\Schema; 
 
 class BeersController extends Controller
 {
@@ -58,6 +58,21 @@ class BeersController extends Controller
         //$beer = Beer::findOrFail($beer);
         return view('beers.details', ['beer' => $beer]);
     }
-
+    public function search(Request $request)
+    {
+        $searchTerm = $request->input('search'); // Assuming you're using a form with a 'search' input field
+        if (!$searchTerm) {
+            $results = collect(); // or any default value you prefer
+        } else {
+            $results = beer::where(function ($query) use ($searchTerm) {
+                $columns = Schema::getColumnListing('beers'); // Retrieve all columns in your table
+    
+                foreach ($columns as $column) {
+                    $query->orWhere($column, 'like', '%' . $searchTerm . '%');
+                }
+            })->get();
+        }
+        return view('/home', compact('results'));
+    }
 
 }
