@@ -64,9 +64,9 @@ class BeersController extends Controller
         
     public function search(Request $request)
     {
-        $searchTerm = $request->input('search'); // Assuming you're using a form with a 'search' input field
+        $searchTerm = $request->input('search');
         if (!$searchTerm) {
-            $results = collect(); // or any default value you prefer
+            $results = collect(); 
         } else {
             $results = beer::where(function ($query) use ($searchTerm) {
                 $columns = Schema::getColumnListing('beers'); // Retrieve all columns in your table

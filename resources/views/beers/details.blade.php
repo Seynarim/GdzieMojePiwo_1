@@ -28,23 +28,23 @@
     </div>
     <!-- Galeria z barami -->
     <div class="flex">
-    @foreach($pubs as $pub)
-        <div class="w-1/3 p-4">
-            <a href="{{ route('Pubs.details', ['Pub' => $pub]) }}"  
-                class="p-8 max-w-lg border border-indigo-300 rounded-2xl hover:shadow-xl hover:shadow-indigo-50 flex flex-col items-center relative">
-                <img src="{{ asset($pub->image_url) }}" 
-                    class="shadow rounded-lg overflow-hidden border">
-                <div class="mt-8">
-                    <h4 class="font-bold text-xl">{{ $pub->name }}</h4>
-                    <p class="mt-2 text-gray-600">Address: {{ $pub->adress }}</p>
-                    <p class="mt-2 text-gray-600">Google Maps URL: {{ $pub->google_url }}</p>
-                    <p class="mt-2 text-gray-600">Address URL: {{ $pub->adress_url }}</p>
-                    <!-- Add other details you want to display -->
-                </div>
-            </a>
-        </div>
-    @endforeach
-</div>
+        @foreach($pubs as $pub)
+            <div class="w-1/3 p-4">
+                <a href="{{ route('Pubs.details', ['Pub' => $pub]) }}"  
+                    class="p-8 max-w-lg border border-indigo-300 rounded-2xl hover:shadow-xl hover:shadow-indigo-50 flex flex-col items-center relative">
+                    <img src="{{ asset($pub->image_url) }}" 
+                        class="shadow rounded-lg overflow-hidden border">
+                    <div class="mt-8">
+                        <h4 class="font-bold text-xl">{{ $pub->name }}</h4>
+                        <p class="mt-2 text-gray-600">Address: {{ $pub->adress }}</p>
+                        <p class="mt-2 text-gray-600">Google Maps URL: {{ $pub->google_url }}</p>
+                        <p class="mt-2 text-gray-600">Address URL: {{ $pub->adress_url }}</p>
+                        <!-- Add other details you want to display -->
+                    </div>
+                </a>
+            </div>
+        @endforeach
+    </div>
 
 </div>
 
