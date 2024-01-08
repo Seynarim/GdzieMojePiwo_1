@@ -22,6 +22,7 @@
                 <h4 class="font-bold text-xl">{{$Pub->name}}</h4>
                 <p class="mt-2 text-gray-600">Producent:{{$Pub->adress}}</p>
                 <p class="mt-2 text-gray-600">Typ Piwa:{{$Pub->adress_url}}</p>
+                <!-- Wymiary zdefiniowane w pubs-controller  - iframe google-->
                 {!! $modifiedIframe !!}
             </div>
         </a>
