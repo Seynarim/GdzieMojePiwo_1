@@ -8,12 +8,10 @@
 
 <h1> wyszukiwarka </h1>
 
+
 @include('search.index') 
 
 @endsection
-
-
-
 
   
     
