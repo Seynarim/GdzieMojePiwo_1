@@ -54,11 +54,3 @@ Route::delete('/Pubs/{Pub}/delete', [PubsController::class, 'delete'])->name('Pu
 // Details
 Route::get('/Pubs/{Pub}/details', [PubsController::class, 'details'])->name('Pubs.details');
 
-/* old ones
-Route::get('/admin/beer', [NavController::class,'AdminBeer'])->name('AdminBeer');
-Route::get('/admin/bar', [NavController::class,'AdminBar'])->name('AdminBar');
-Route::get('/admin/beerbar', [NavController::class,'AdminBeerBaar'])->name('AdminBeerBar');
-Route::get('/test', [NavController::class,'test'])->name('test');
- */
-// Route::get('/admin', [NavController::class,'Admin'])->name('Admin');
-// Route::get('/admin', [NavController::class,'Admin'])->name('Admin');
