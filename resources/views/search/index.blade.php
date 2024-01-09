@@ -1,9 +1,9 @@
 <!-- HOME -->
 
-@section('content')
 
 
-<h1>Search.index</h1>
+
+
 
     <!-- Search Form -->
     <form method="GET" action="{{ route('search.beer') }}">
@@ -53,4 +53,4 @@
             </div>
         @endif
     @endif
-@endsection
+

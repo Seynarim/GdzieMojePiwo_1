@@ -37,6 +37,8 @@ Route::delete('/beers/{beer}/delete', [BeersController::class, 'delete'])->name(
 Route::get('/beer/{beer}/details', [BeersController::class, 'details'])->name('beer.details');
 //Search
 Route::get('/search/BeerSearch', [Beerscontroller::class, 'search']) -> name('search.beer');
+// Beers Grid *new*
+Route::get('/beers_grid', [BeersController::class, 'beersGrid'])->name('beers.grid');
 
 
 //PUBS CONTROLLER ROUTES

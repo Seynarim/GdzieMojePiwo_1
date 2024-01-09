@@ -4,16 +4,16 @@
 @section('content')
 
 
-<h1>home</h1>
 
 <h1> wyszukiwarka </h1>
 
 
 @include('search.index') 
+@include('elements.beers_grid')
 
 @endsection
 
-  
+
     
 
 
