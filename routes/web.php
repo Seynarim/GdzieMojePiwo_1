@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeersController;
 use App\Http\Controllers\PubsController;
 use App\Http\Controllers\NavController;
+use App\Http\Controllers\HomeController;
+
+
 
 route::get('/', function()  {
     return view('Home');
@@ -37,8 +40,6 @@ Route::delete('/beers/{beer}/delete', [BeersController::class, 'delete'])->name(
 Route::get('/beer/{beer}/details', [BeersController::class, 'details'])->name('beer.details');
 //Search
 Route::get('/search/BeerSearch', [Beerscontroller::class, 'search']) -> name('search.beer');
-// Beers Grid *new*
-Route::get('/beers_grid', [BeersController::class, 'beersGrid'])->name('beers.grid');
 
 
 //PUBS CONTROLLER ROUTES
@@ -56,3 +57,5 @@ Route::delete('/Pubs/{Pub}/delete', [PubsController::class, 'delete'])->name('Pu
 // Details
 Route::get('/Pubs/{Pub}/details', [PubsController::class, 'details'])->name('Pubs.details');
 
+//HOME CONTROLLER ROUTES
+Route::get('/', [HomeController::class, 'index']);

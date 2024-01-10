@@ -11,15 +11,8 @@ class BeersController extends Controller
     public function index(){
         $beers = Beer::all();
         return view('beers.index', ['beers' => $beers]);
-
-
     }
-
-    // beersGrid *new*
-    public function beersGrid() {
-        $beers = Beer::all();
-        return view('elements.beers_grid', ['beers' => $beers]);
-    }
+    
 
     public function create(){
         return view('beers.create');

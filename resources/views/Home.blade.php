@@ -4,14 +4,20 @@
 @section('content')
 
 
+<img class="h-auto max-w-full mx-auto" src="/img/beerbaner.png" alt="image description">
 
-<h1> wyszukiwarka </h1>
 
+    @include('search.index')
 
-@include('search.index') 
-@include('elements.beers_grid')
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        @foreach($beers as $beer)
+            @include('elements.beer_card', ['beer' => $beer])
+        @endforeach
+    </div>
 
+       
 @endsection
+
 
 
     
