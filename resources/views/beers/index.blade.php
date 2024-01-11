@@ -2,7 +2,6 @@
 
 @section('content')
 
-<h1> Beers.INDEX </H1>
 
 <!-- Message if edit succed -->
 <div>

@@ -4,6 +4,6 @@
     <meta name="description" content="GdzieMojePiwo" />
     <meta name="author" content="WD,AC,ED" />
 
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css','resources/js/app.js'])
 
     <title>GdzieMojePiwo</title>
