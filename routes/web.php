@@ -8,9 +8,6 @@ use App\Http\Controllers\HomeController;
 
 
 
-route::get('/', function()  {
-    return view('Home');
-});
 
 //temporary
 Route::get('/Cmd1', [BeersController::class, 'try']);
@@ -19,10 +16,12 @@ Route::get('/Cmd1', [BeersController::class, 'try']);
 //Route::get('Nazwa wprzeglądarce', [NavController::class,wywolanie])->name(nazwawew);
 
 // NAVIGATION CONROLLER ROUTES
-Route::get('/home',     [NavController::class,'Home'])      ->name('Home');
 Route::get('/aboutus',  [NavController::class,'aboutus'])   ->name('AboutUs');
 Route::get('/login',    [NavController::class,'Login'])     ->name('Login');
 
+
+// HOME CONTROLLER
+Route::get('/home',     [HomeController::class,'index'])      ->name('Home');
 
 // BEERS CONTROLLER ROUTES 
 Route::get('/beers', [BeersController::class, 'index'])->name('beers.index');
