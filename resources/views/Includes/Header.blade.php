@@ -2,7 +2,7 @@
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="{{route('Home')}}" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="{{ asset('img/header1.png') }}" class="h-8" alt="Gdzie Moje Piwo? Logo" />
-            <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Gdzie Moje Piwo?</span>
+            
         </a>
 
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">

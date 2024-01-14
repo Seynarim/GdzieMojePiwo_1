@@ -13,9 +13,9 @@
 </div>
 
 <!-- CREATE A BEER BUTTON -->
-<button  class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+<button  class="ml-4 inline-flex items-center justify-center px-3 h-8 text-sm font-medium text-gray-500 bg-white border border-amber-500 rounded-lg hover:bg-amber-500 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
   <a href = "{{route('beers.create')}}">
-    Create a Beer
+    Dodaj nowe piwo
     </a>
 </button>
 
@@ -26,13 +26,13 @@
     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
         <tr>
             <th scope="col" class="px-6 py-3">ID</th>
-            <th scope="col" class="px-6 py-3">Name</th>
-            <th scope="col" class="px-6 py-3">Producer</th>
-            <th scope="col" class="px-6 py-3">Type</th>
-            <th scope="col" class="px-6 py-3">Description</th>
-            <th scope="col" class="px-6 py-3 text-center">Image</th>
-            <th scope="col" class="px-6 py-3">Edit</th>
-            <th scope="col" class="px-6 py-3">Delete</th>
+            <th scope="col" class="px-6 py-3">Nazwa</th>
+            <th scope="col" class="px-6 py-3">Producent</th>
+            <th scope="col" class="px-6 py-3">Typ</th>
+            <th scope="col" class="px-6 py-3">Opis</th>
+            <th scope="col" class="px-6 py-3 text-center">Obraz</th>
+            <th scope="col" class="px-6 py-3">Edytuj</th>
+            <th scope="col" class="px-6 py-3">Usuń</th>
             </tr>
             <thead>
                 @foreach($beers as $beer )
@@ -53,8 +53,8 @@
                         </td>
                         <!-- EDIT BUTTON -->
                         <td class="px-6 py-4">
-                            <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full">
-                                <a href="{{route('beers.edit', ['beer' => $beer])}}">Edit</a>
+                            <button class="bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded-full">
+                                <a href="{{route('beers.edit', ['beer' => $beer])}}">Edytuj</a>
                             </button>
                         </td>
                         <!-- DELETE BUTTON -->
@@ -63,7 +63,7 @@
                             @csrf
                             @method('delete')
                             <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">
-                            <input type="submit" value="Delete"/>
+                            <input type="submit" value="Usuń"/>
                             </button>
                         </form>
                         </td>
