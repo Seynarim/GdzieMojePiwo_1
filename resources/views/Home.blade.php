@@ -1,18 +1,28 @@
 <!-- HOME -->
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
 
 
-<img class="h-auto max-w-full mx-auto" src="/img/beerbaner.png" alt="image description">
+<!-- Treść aplikacji -->
+    <div class="container mx-auto mt-8 p-4">
+
+        <!-- Logo -->
+        <div class="text-center">
+            <img src="/img/logo_v2.png" alt="Gdzie Moje Piwo?" class="h-64 w-auto mx-auto">
+        </div>
+
+        <!-- Krótki opis -->
+        <div class="text-center mt-4">
+            <p class="text-xl text-gray-600">Znajdź swoje ulubione piwo i odkrywaj nowe miejsca!</p>
+        </div>
+        
+        <!-- Okno wyszukiwania -->
+        <div class="mt-8">
+            @include('search.index')
+        </div>
 
 
-    @include('search.index')
-
-    <div class="mx-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        @foreach($beers as $beer)
-            @include('elements.beer_card', ['beer' => $beer])
-        @endforeach
     </div>
 
 

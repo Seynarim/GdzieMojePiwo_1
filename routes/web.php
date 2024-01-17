@@ -18,6 +18,7 @@ Route::get('/Cmd1', [BeersController::class, 'try']);
 // NAVIGATION CONROLLER ROUTES
 Route::get('/aboutus',  [NavController::class,'aboutus'])   ->name('AboutUs');
 Route::get('/login',    [NavController::class,'Login'])     ->name('Login');
+Route::get('/beers/fav', [NavController::class,'FavBeers']) ->name('FavBeers');
 
 
 // HOME CONTROLLER
@@ -39,6 +40,8 @@ Route::delete('/beers/{beer}/delete', [BeersController::class, 'delete'])->name(
 Route::get('/beer/{beer}/details', [BeersController::class, 'details'])->name('beer.details');
 //Search
 Route::get('/search/BeerSearch', [Beerscontroller::class, 'search']) -> name('search.beer');
+
+
 
 
 //PUBS CONTROLLER ROUTES

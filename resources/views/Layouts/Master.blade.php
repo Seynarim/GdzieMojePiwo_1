@@ -1,29 +1,19 @@
 <!-- app/views/layouts/master.blade.php -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-@include('includes.Head')
+    @include('includes.Head')
 </head>
 
-<body>
-  <div>
+<body class="flex flex-col h-screen">
     <header class="row">
-      @include('includes.header')
+        
     </header>
-    <div id="main" class="row">
-      @yield('content')
-
+    <div id="main" class="row flex-grow">
+        @yield('content')
     </div>
-    <footer class="row">
-      @include('includes.footer')
-  </footer>
-
-  </div>
-
+    <footer class="row mt-auto">
+        @include('elements.menu')
+    </footer>
 </body>
-
 </html>
-
-
-
-
