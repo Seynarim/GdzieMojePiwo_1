@@ -1,4 +1,4 @@
-<!-- app/views/layouts/master.blade.php -->
+<!-- app/views/layouts/App.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,12 +8,13 @@
 
 <body class="flex flex-col h-screen">
     <header class="row">
+        @include('elements.top_menu')
         
     </header>
     <div id="main" class="row flex-grow">
         @yield('content')
     </div>
-    <footer class="row mt-auto">
+    <footer class="row">
         @include('elements.bottom_menu')
     </footer>
 </body>

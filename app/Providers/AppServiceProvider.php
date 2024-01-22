@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Models\Beer; // Importuje model Beer
+use App\Models\Pubs;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,5 +28,9 @@ class AppServiceProvider extends ServiceProvider
         // Tutaj możesz zdefiniować zmienną i przekazać ją do wszystkich widoków
         $beers = Beer::all();
         view()->share('beers', $beers);
+
+        // Zmienna pubs
+        $Pubs = Pubs::all();
+        view()->share('Pubs', $Pubs);
     }
 }

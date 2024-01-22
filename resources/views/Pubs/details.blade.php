@@ -1,62 +1,48 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
 
-<!-- przycisk powrotu -->
-<div class="mt-5 ml-4">
-    @include('elements.back_button')
-</div>
-
-<div class="flex flex-col lg:flex-row">
-    <!-- Karta pubu -->
-    <div class="w-full lg:w-1/2 p-4">
-        <a class="p-7 max-w-lg min-w-[sm] border border-amber-500 rounded-2xl hover:shadow-xl hover:shadow-amber-50 flex flex-col items-center relative">
-            <img 
-                src="{{ asset($Pub->image_url) }}" 
-                class="max-h-[200px] p-4 rounded-t-lg mx-auto">
-            <div class="px-5 pb-5">
-                <h4 class="text-2xl font-semibold tracking-tight text-gray-700 dark:text-white">{{$Pub->name}}</h4>
-                <p class="text-s font-light text-gray-700 dark:text-white">{{$Pub->adress}}</p>
-                <p class="text-s font-light text-gray-700 dark:text-white">{{$Pub->adress_url}}</p>
-                <div class="w-full lg:w-full mt-4 lg:w-full"></div>
-                <!-- Wymiary zdefiniowane w pubs-controller  - iframe google-->
-                {!! $modifiedIframe !!}
-            </div>
-        </a>
-    </div>
-
-    <!-- Galeria z piwami -->
-    <div class="w-full lg:w-1/2 flex flex-wrap">
-        @foreach($beers as $beer)
-            <div class="w-1/2 md:w-1/3 lg:w-flex p-4">
-                <a href="{{ route('beer.details', ['beer' => $beer]) }}"  
-                    class="p-8 max-w-xl border border-amber-500 rounded-2xl hover:shadow-xl hover:shadow-amber-50 flex flex-col items-center relative">
-                    <img src="{{ asset($beer->ImageUrl) }}" 
-                        class="rounded-lg overflow-hidden min-w-[100px]">
-                    <div class="mt-8">
-                        <h4 class="font-bold text-xl">{{ $beer->name }}</h4>
-                        <p class="text-s font-light text-gray-700 dark:text-white">Producent:  {{ $beer->producer }}</p>
-                        <p class="text-s font-light text-gray-700 dark:text-white">Typ: {{ $beer->type}}</p>
+    <div class="flow-root mt-2 mb-36 p-4">
+        <div class="flow grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Informacje o pojedynczym pubie -->
+            <div class="flex items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-4">
+                
+                    <div class="w-20 h-20 md:w-32 md:h-auto md:rounded-l-lg md:rounded-t-none">
+                        <img src="{{ asset($Pub->image_url) }}" class="object-cover w-full h-full md:rounded-l-lg md:rounded-t-none">
+                    </div>
+                    <div class="flex flex-col justify-between p-4 leading-normal w-full ml-4">
+                        <div>
+                            <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $Pub->name }}</h5>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Adres: {{ $Pub->adress }}</p>
+                            
+                        </div>
                     </div>
                 </a>
             </div>
-        @endforeach
+        </div>
+        <div class="fb-page" data-href="{{ $Pub->adress_url }}" data-tabs="events" data-width="400" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="{{ $Pub->adress_url }}" class="fb-xfbml-parse-ignore"><a href="{{ $Pub->adress_url }}">{{ $Pub->name }}</a></blockquote></div>
+        <div class="w-full lg:w-full mt-4 mb-4 lg:w-full"></div>
+         <!-- Wymiary zdefiniowane w pubs-controller  - iframe google-->
+        {!! $modifiedIframe !!}
+        <!-- Tutaj możesz dodać inne informacje o pubie -->
+
+        <!-- Lista piw dostępnych w pubie -->
+        <div class="flow-root mt-4">
+            <h2 class="text-xl font-semibold tracking-tight mb-4">Piwa dostępne w tym pubie:</h2>
+            <div class="flow grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                @foreach($beers as $beer)
+                    <a href="{{ route('beer.details', ['beer' => $beer->id]) }}" class="flex items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-4 mb-4">
+                        <img class="object-cover w-32 h-32 md:w-48 md:h-auto md:rounded-l-lg md:rounded-t-none" src="{{ $beer->ImageUrl }}" alt="{{ $beer->name }}">
+                        <div class="flex flex-col justify-between p-4 leading-normal w-full ml-4">
+                            <div>
+                                <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $beer->name }}</h5>
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $beer->type }}</p>
+                            </div>
+                        </div>
+                    </a>
+                @endforeach
+            </div>
+        </div>
     </div>
-</div>
 
-<!-- JS Powróc do poprzedniego okna -->
-<script>
-    function goBack() {
-        window.history.back();
-    }
-</script>
-
-
-@stop
-
-
-
-  
-    
-
-
+@endsection

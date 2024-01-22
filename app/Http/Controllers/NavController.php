@@ -29,6 +29,10 @@ class NavController extends Controller
         return view('beers.fav');
     }
 
+    public function FavPubs(){
+        return view('Pubs.fav');
+    }
+
 
 
 

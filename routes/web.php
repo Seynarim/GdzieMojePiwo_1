@@ -19,6 +19,7 @@ Route::get('/Cmd1', [BeersController::class, 'try']);
 Route::get('/aboutus',  [NavController::class,'aboutus'])   ->name('AboutUs');
 Route::get('/login',    [NavController::class,'Login'])     ->name('Login');
 Route::get('/beers/fav', [NavController::class,'FavBeers']) ->name('FavBeers');
+Route::get('/pubs/fav', [NavController::class,'FavPubs']) ->name('FavPubs');
 
 
 // HOME CONTROLLER
