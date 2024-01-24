@@ -12,7 +12,7 @@
             
         </a>
         <!-- Napis wyniki wyszukiwania -->
-        <h1 class="text-xl font-semibold tracking-tight">Polecane Puby</h1>
+        <h1 class="text-xl font-semibold tracking-tight">Puby</h1>
         <!-- Ikona ustawień -->
         <a href="#" class="text-3xl">
             <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">

@@ -22,20 +22,19 @@
                     <!-- Lista pubów -->
                     <div class="flow-root mt-4">
                         <h2 class="text-xl font-semibold tracking-tight mb-4">Puby, w których dostępne jest to piwo:</h2>
-                        @foreach($pubs as $pub)
-                            <a href="{{ route('Pubs.details', ['Pub' => $pub]) }}" class="flex items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-4 mb-4">
-                                <div class="w-20 h-20 md:w-32 md:h-auto md:rounded-l-lg md:rounded-t-none">
-                                    <img src="{{ asset($pub->image_url) }}" class="object-cover w-full h-full md:rounded-l-lg md:rounded-t-none">
-                                </div>
-                                <div class="flex flex-col justify-between p-4 leading-normal w-full ml-4">
-                                    <div>
-                                        <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $pub->name }}</h4>
-                                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Adres: {{ $pub->adress }}</p>
-                                        <!-- Tutaj możesz dodać inne informacje o pubie -->
+                        <div class="flow grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            @foreach($pubs as $pub)
+                                <a href="{{ route('Pubs.details', ['Pub' => $pub]) }}" class="flex items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-4 mb-4">
+                                    <img class="object-cover w-32 h-32 md:w-48 md:h-auto md:rounded-l-lg md:rounded-t-none" src="{{ asset($pub->image_url) }}" alt="{{ $pub->name }}">
+                                    <div class="flex flex-col justify-between p-4 leading-normal w-full ml-4">
+                                        <div>
+                                            <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $pub->name }}</h5>
+                                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Adres: {{ $pub->adress }}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                        @endforeach
+                                </a>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
