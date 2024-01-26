@@ -10,7 +10,7 @@
                     <div class="w-25 h-auto md:w-32 md:h-auto md:rounded-l-lg md:rounded-t-none">
                         <img src="{{ asset($Pub->image_url) }}" class="object-cover w-full h-full md:rounded-l-lg md:rounded-t-none">
                     </div>
-                    <div class="flex flex-col justify-between p-4 leading-normal w-full ml-4">
+                    <div class="flex flex-col justify-between p-4 leading-normal w-fix ml-4">
                         <div>
                             <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $Pub->name }}</h5>
                             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Adres: {{ $Pub->adress }}</p>
