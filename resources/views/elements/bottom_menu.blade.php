@@ -29,12 +29,7 @@
             </a>
 
             <!-- Element 4 -->
-            <a href="#" class="flex flex-col items-center">
-                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
-                    <!-- Dodaj ikonę do SVG -->
-                    <img src="/img/events.svg" alt="Events Icon" class="w-16 h-16" />
-                </svg>
-                <span class="text-xl text-gray-800">Wydarzenia</span>
+
             </a>
         </div>
     </footer>
