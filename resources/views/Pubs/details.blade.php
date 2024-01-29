@@ -13,7 +13,7 @@
                     <div class="flex flex-col justify-between p-4 leading-normal w-fix ml-4">
                         <div>
                             <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $Pub->name }}</h5>
-                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Adres: {{ $Pub->adress }}</p>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $Pub->adress }}</p>
                             <div class="fb-page" data-href="{{ $Pub->adress_url }}" data-tabs="events" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="{{ $Pub->adress_url }}" class="fb-xfbml-parse-ignore"><a href="{{ $Pub->adress_url }}">{{ $Pub->name }}</a></blockquote></div>
                         </div>
                     </div>

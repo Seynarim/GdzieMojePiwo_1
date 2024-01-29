@@ -33,7 +33,7 @@ class NavController extends Controller
         return view('Pubs.fav');
     }
 
-
+   
 
 
 }
