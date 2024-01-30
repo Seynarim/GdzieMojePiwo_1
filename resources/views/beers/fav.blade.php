@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Góra ekranu -->
-    <div class="flex justify-between items-center p-4">
+    <div class="flex justify-between border-b items-center p-4">
         
         <!-- Strzałka powrotu -->
         <a href="#" class="text-3xl" onclick="goBack()" >

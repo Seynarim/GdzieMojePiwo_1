@@ -1,5 +1,5 @@
 <!-- Góra ekranu -->
-<div class="flex justify-between items-center p-4">
+<div class="flex justify-between border-b items-center p-4 w-full">
         
         <!-- Strzałka powrotu -->
         <a href="#" class="text-3xl" onclick="goBack()" >
@@ -9,7 +9,7 @@
             
         </a>
         <!-- Napis wyniki wyszukiwania -->
-        <h1 class="text-xl font-semibold tracking-tight">Wyniki wyszukiwania</h1>
+        <h1 class="text-xl font-semibold tracking-tight"></h1>
         <!-- Ikona ustawień -->
         <a href="#" class="text-3xl">
             <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -19,10 +19,7 @@
         
     </div>
 
-    <!-- Okno wyszukiwania -->
-    <div class="mt-4">
-        @include('search.index')
-    </div>
+    
 
     <!-- JS Powróc do poprzedniego okna -->
 <script>

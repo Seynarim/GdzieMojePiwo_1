@@ -28,8 +28,6 @@
                 <span class="text-xl text-gray-800">Piwa</span>
             </a>
 
-            <!-- Element 4 -->
-
-            </a>
+            
         </div>
     </footer>

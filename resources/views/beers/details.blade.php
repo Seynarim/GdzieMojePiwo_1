@@ -2,6 +2,10 @@
 
 @section('content')
 
+<!-- Okno wyszukiwania -->
+<div class="mt-4">
+        @include('search.index')
+    </div>
     
 <div class="flow-root mt-2 mb-36 p-4">
         <div class="flow grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">

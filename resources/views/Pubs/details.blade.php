@@ -2,6 +2,11 @@
 
 @section('content')
 
+<!-- Okno wyszukiwania -->
+<div class="mt-4">
+        @include('search.index')
+</div>
+
     <div class="flow-root mt-2 mb-36 p-4">
         <div class="flow grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
             <!-- Informacje o pojedynczym pubie -->
