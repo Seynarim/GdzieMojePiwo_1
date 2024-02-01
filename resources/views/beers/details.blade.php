@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- Okno wyszukiwania -->
-<div class="mt-4">
+<div class="mt-16">
         @include('search.index')
     </div>
     

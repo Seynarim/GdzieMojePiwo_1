@@ -5,16 +5,16 @@
 
 
 <!-- Message if edit succed -->
-<div>
+<div class="max-w-sm mx-auto mt-16">
     @if(session()->has('success'))
-        <div>
-            {{session('success')}}
-        </div>
+    <div class="bg-green-500 text-white font-bold px-4 py-2 rounded-lg mb-4">
+        {{ session('success') }}
+    </div>
     @endif
 </div>
 
 <!-- CREATE A Pub BUTTON -->
-<button  class="ml-4 mt-4 mb-4 inline-flex items-center justify-center px-3 h-8 text-sm font-medium text-gray-500 bg-white border border-amber-500 rounded-lg hover:bg-amber-500 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+<button  class="max-w-sm mx-auto mt-4 mb-4 ml-4 text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
   <a href = "{{route('Pubs.create')}}">
     Dodaj nowy Pub
     </a>
