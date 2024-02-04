@@ -62,22 +62,7 @@ class BeersController extends Controller
         return view('beers.details', compact('beer', 'pubs'));
     }
         
-    public function search(Request $request)
-    {
-        $searchTerm = $request->input('search');
-        if (!$searchTerm) {
-            $results = collect(); 
-        } else {
-            $results = beer::where(function ($query) use ($searchTerm) {
-                $columns = Schema::getColumnListing('beers'); // Retrieve all columns in your table
-    
-                $query  
-                    ->orWhere('name', 'like', '%' . $searchTerm . '%')
-                    ->orWhere('producer', 'like', '%' . $searchTerm . '%');
-            })->get();
-        }
-        return view('/home', compact('results'));
-    }
+  
     public function try(){
     $beer = Beer::find(3); // Replace $beerId with the actual ID of the beer
     $pubs = [12]; // Replace with the IDs of the pubs you want to associate

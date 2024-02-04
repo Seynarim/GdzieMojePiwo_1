@@ -23,8 +23,32 @@
 
     <!-- Okno wyszukiwania -->
     <div class="mt-16">
-        @include('search.index')
+        @include('search.BeersOnly')
     </div>
+
+    @if(isset($results))
+        <h2>Wynik wyszukiwania</h2>
+        @if($results->isEmpty())
+            <p>Nie Odnaleziono</p>
+        @else
+        <div class="flow-root mb-36 p-4">
+            <div class="flow grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
+                @foreach($results as $result)
+                <a href="{{ route('beer.details', ['beer' => $result->id]) }}" class="flex items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-4">
+                        <img class="object-cover w-32 h-32 md:w-48 md:h-auto md:rounded-l-lg md:rounded-t-none" src="{{ $result->ImageUrl }}" alt="{{ $result->name }}">
+                        <div class="flex flex-col justify-between p-4 leading-normal w-fix">
+                            <div>
+                                <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $result->name }}</h5>
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $result->type }}</p>
+                            </div>
+                        </div>
+                    </a>
+                @endforeach
+            </div>
+        </div>
+        @endif
+        Pozostałe Piwa
+    @endif
 
     <!-- Lista piw jako poziome kafelki -->
     <div class="flow-root mb-36 p-4">

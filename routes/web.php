@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeersController;
 use App\Http\Controllers\PubsController;
@@ -39,9 +40,15 @@ Route::put('/beers/{beer}/update', [BeersController::class, 'update'])->name('be
 Route::delete('/beers/{beer}/delete', [BeersController::class, 'delete'])->name('beers.delete');
 // Details
 Route::get('/beer/{beer}/details', [BeersController::class, 'details'])->name('beer.details');
-//Search
-Route::get('/search/BeerSearch', [Beerscontroller::class, 'search']) -> name('search.beer');
 
+
+// SEARCH CONTROLLER
+// Beer
+Route::get('/search/Beers', [SearchController::class, 'BeerSearch']) -> name('search.beer');
+// Pubs
+Route::get('/search/Pubs', [SearchController::class, 'PubSearch']) -> name('search.pub');
+// Hybrid
+Route::get('/search/Hybrid', [SearchController::class, 'HybridSearch']) -> name('search.hybrid');
 
 
 
