@@ -17,7 +17,7 @@ class SearchController extends Controller
             $results = collect(); 
         } else {
             $results = beer::where(function ($query) use ($searchTerm) {
-                $columns = Schema::getColumnListing('beers'); // Retrieve all columns in your table
+                $columns = Schema::getColumnListing('beers'); 
     
                 $query  
                     ->orWhere('name', 'like', '%' . $searchTerm . '%')
@@ -25,6 +25,22 @@ class SearchController extends Controller
             })->get();
         }
         return view('beers.fav', compact('results'));
+    }
+    public function PubSearch(Request $request)
+    {
+        $searchTerm = $request->input('search');
+        if (!$searchTerm) {
+            $results = collect(); 
+        } else {
+            $results = pubs::where(function ($query) use ($searchTerm) {
+                $columns = Schema::getColumnListing('pubs'); 
+    
+                $query  
+                    ->orWhere('name', 'like', '%' . $searchTerm . '%')
+                    ->orWhere('adress', 'like', '%' . $searchTerm . '%');
+            })->get();
+        }
+        return view('pubs.fav', compact('results'));
     }
 
 
