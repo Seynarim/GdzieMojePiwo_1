@@ -25,10 +25,10 @@
                     <a href="{{route('AboutUs')}}" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-amber-500 md:hover:bg-transparent md:hover:text-amber-500 md:dark:hover:text-amber-600 dark:text-white dark:hover:bg-amber-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">O nas</a>
                 </li>
                 <li>
-                    <a href="{{route('beers.index')}}" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-amber-500 md:hover:bg-transparent md:hover:text-amber-500 md:dark:hover:text-amber-600 dark:text-white dark:hover:bg-amber-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Piwa</a>
+                    <a href="{{route('FavBeers')}}" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-amber-500 md:hover:bg-transparent md:hover:text-amber-500 md:dark:hover:text-amber-600 dark:text-white dark:hover:bg-amber-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Piwa</a>
                 </li>
                 <li>
-                    <a href="{{route('Pubs.index')}}" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-amber-500 md:hover:bg-transparent md:hover:text-amber-500 md:dark:hover:text-amber-600 dark:text-white dark:hover:bg-amber-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Puby</a>
+                    <a href="{{route('FavPubs')}}" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-amber-500 md:hover:bg-transparent md:hover:text-amber-500 md:dark:hover:text-amber-600 dark:text-white dark:hover:bg-amber-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Puby</a>
                 </li>
             </ul>
         </div>

@@ -34,12 +34,12 @@
         <div class="flow-root mb-36 p-4">
             <div class="flow grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
                 @foreach($results as $result)
-                <a href="{{ route('beer.details', ['beer' => $result->id]) }}" class="flex items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-4">
-                        <img class="object-cover w-32 h-32 md:w-48 md:h-auto md:rounded-l-lg md:rounded-t-none" src="{{ $result->ImageUrl }}" alt="{{ $result->name }}">
+                <a href="{{ route('Pubs.details', ['Pub' => $result->id]) }}" class="flex items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-4">
+                        <img class="object-cover w-32 h-32 md:w-48 md:h-auto md:rounded-l-lg md:rounded-t-none" src="{{ $result->image_url }}" alt="{{ $result->name }}">
                         <div class="flex flex-col justify-between p-4 leading-normal w-fix">
                             <div>
                                 <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $result->name }}</h5>
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $result->type }}</p>
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $result->adress }}</p>
                             </div>
                         </div>
                     </a>
@@ -47,7 +47,7 @@
             </div>
         </div>
         @endif
-        Pozostałe Bary
+        Pozostałe puby
     @endif
 
     <!-- Lista pubów jako poziome kafelki -->
