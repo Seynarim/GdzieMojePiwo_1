@@ -27,11 +27,13 @@
     </div>
 
     @if(isset($results))
-        <h2>Wynik wyszukiwania</h2>
+        <h1 class="block mb-2 text-2xl text-center font-medium text-gray-900 dark:text-white">Wyniki wyszukiwania</h1>
         @if($results->isEmpty())
-            <p>Nie Odnaleziono</p>
+            <hr class="h-px my-8 bg-gray-200 border-1 dark:bg-gray-700">
+            <p class="block mb-2 text-xl text-center font-medium text-amber-600 dark:text-white">Nie odnaleziono :( </p>
+            <hr class="h-px my-8 bg-gray-200 border-1 dark:bg-gray-700">
         @else
-        <div class="flow-root mb-36 p-4">
+        <div class="flow-root mb-4 p-4">
             <div class="flow grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
                 @foreach($results as $result)
                 <a href="{{ route('beer.details', ['beer' => $result->id]) }}" class="flex items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-4">
@@ -47,7 +49,7 @@
             </div>
         </div>
         @endif
-        Pozostałe Piwa
+        <h1 class="block mb-2 text-2xl text-center font-medium text-gray-900 dark:text-white">Pozostałe Piwa</h1>
     @endif
 
     <!-- Lista piw jako poziome kafelki -->

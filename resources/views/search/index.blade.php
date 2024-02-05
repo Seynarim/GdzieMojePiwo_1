@@ -33,9 +33,9 @@
 
     <!-- Display Search Results -->
     @if(isset($results))
-        <h2>Wynik wyszukiwania</h2>
+        <h1 class="block mb-2 text-2xl text-center font-medium text-gray-900 dark:text-white">Wyniki wyszukiwania</h1>
         @if($results->isEmpty())
-            <p>Nie Odnaleziono</p>
+            <h2 class="block mb-2 text-2xl text-center font-medium text-gray-900 dark:text-white">Nie odnaleziono</h2>
         @else
         <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 md:grid-cols-2">
             @foreach($results as $result)
