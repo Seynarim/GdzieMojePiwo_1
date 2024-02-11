@@ -69,9 +69,6 @@ Route::delete('/Pubs/{Pub}/delete', [PubsController::class, 'delete'])->name('Pu
 Route::get('/Pubs/{Pub}/details', [PubsController::class, 'details'])->name('Pubs.details');
 
 //HOME CONTROLLER ROUTES
-<<<<<<< Updated upstream
-Route::get('/', [HomeController::class, 'index']);
-=======
 Route::get('/', [HomeController::class, 'index']);
 
 
@@ -87,4 +84,3 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
->>>>>>> Stashed changes
