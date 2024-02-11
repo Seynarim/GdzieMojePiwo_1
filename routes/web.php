@@ -6,6 +6,7 @@ use App\Http\Controllers\BeersController;
 use App\Http\Controllers\PubsController;
 use App\Http\Controllers\NavController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
 
 
 
@@ -70,9 +71,6 @@ Route::get('/Pubs/{Pub}/details', [PubsController::class, 'details'])->name('Pub
 //HOME CONTROLLER ROUTES
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -85,3 +83,4 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+

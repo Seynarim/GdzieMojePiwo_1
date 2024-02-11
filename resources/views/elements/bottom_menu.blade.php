@@ -1,5 +1,5 @@
 <!-- Menu -->
-<footer class="bg-white text-white p-1 border-t fixed bottom-0 w-full">
+<footer class="sticky top-[100vh] bg-white text-white p-1 border-t fixed bottom-0 w-full">
         <div class="flex justify-around">
             <!-- Element 1 -->
             <a href="{{route('Home')}}" class="flex flex-col items-center">

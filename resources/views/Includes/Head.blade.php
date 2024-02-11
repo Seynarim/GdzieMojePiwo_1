@@ -10,5 +10,5 @@
 
     <title>GdzieMojePiwo</title>
 
-    <div id="fb-root"></div>
+ 
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v18.0" nonce="TpO70R5C"></script>
