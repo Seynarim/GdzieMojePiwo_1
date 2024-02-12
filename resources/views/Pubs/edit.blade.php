@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="max-w-sm mx-auto mt-16">
-    <h1 class="block mb-4 text-2xl text-center font-medium text-gray-900">Edytuj Pub</h1>
+    <h1 class="block mb-4 text-2xl text-center font-medium text-gray-900 dark:text-white">Edytuj Pub</h1>
 
     @if($errors->any())
     <div class="bg-red-500 p-4 mb-4 text-white rounded">
@@ -19,32 +19,32 @@
         @method('put')
 
         <div class="mb-4">
-            <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Nazwa</label>
-            <input type="text" name="name" placeholder="Nazwa" value="{{ $Pub->name }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5">
+            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nazwa</label>
+            <input type="text" name="name" placeholder="Nazwa" value="{{ $Pub->name }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
         </div>
 
         <div class="mb-4">
-            <label for="adress" class="block mb-2 text-sm font-medium text-gray-900">Adres</label>
-            <input type="text" name="adress" placeholder="Adres" value="{{ $Pub->adress }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5">
+            <label for="adress" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Adres</label>
+            <input type="text" name="adress" placeholder="Adres" value="{{ $Pub->adress }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
         </div>
 
         <div class="mb-4">
-            <label for="adress_url" class="block mb-2 text-sm font-medium text-gray-900">Facebook</label>
-            <input type="text" name="adress_url" placeholder="Facebook URL" value="{{ $Pub->adress_url }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5">
+            <label for="adress_url" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Facebook</label>
+            <input type="text" name="adress_url" placeholder="Facebook URL" value="{{ $Pub->adress_url }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
         </div>
 
         <div class="mb-4">
-            <label for="google_url" class="block mb-2 text-sm font-medium text-gray-900">Google URL</label>
-            <input type="text" name="google_url" placeholder="Google URL" value="{{ $Pub->google_url }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5">
+            <label for="google_url" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Google URL</label>
+            <input type="text" name="google_url" placeholder="Google URL" value="{{ $Pub->google_url }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
         </div>
 
         <div class="mb-4">
-            <label for="image_url" class="block mb-2 text-sm font-medium text-gray-900">Obraz URL</label>
-            <input type="text" name="image_url" placeholder="Obraz URL" value="{{ $Pub->image_url }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5">
+            <label for="image_url" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Obraz URL</label>
+            <input type="text" name="image_url" placeholder="Obraz URL" value="{{ $Pub->image_url }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
         </div>
 
         <div class="mb-4">
-            <label for="beersselect" class="block mb-4 text-xl text-center font-medium text-gray-900">Wybierz Piwa:</label>
+            <label for="beersselect" class="block mb-4 text-xl text-center font-medium text-gray-900 dark:text-white">Wybierz Piwa:</label>
             <div class="grid grid-cols-1 gap-4">
                 @php
                     $sortedBeers = $beers->toArray();
@@ -63,7 +63,7 @@
                 @endphp
 
                 @foreach($sortedBeers as $beer)
-                <label class="block mb-2 text-sm font-medium text-gray-900">
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                     <input type="checkbox" class="h-6 w-6 text-amber-500 border-gray-300 rounded focus:ring focus:ring-amber-200" name="beers[]" value="{{ $beer['id'] }}" {{ in_array($beer['id'], $Pub->beers->pluck('id')->toArray()) ? 'checked' : '' }}>
                     <span class="ml-2">{{ $beer['name'] }}</span>
                 </label>
@@ -72,7 +72,7 @@
         </div>
 
         <div class="mb-36">
-            <input type="submit" value="Aktualizuj" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
+            <input type="submit" value="Aktualizuj" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800">
         </div>
     </form>
 </div>

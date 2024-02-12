@@ -18,10 +18,8 @@
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
             <div>
                 <a href="/">
-
                     
                     <img src="{{ asset('img/header1.png') }}" class="h-8" alt="Gdzie Moje Piwo? Logo" />
-
                 </a>
             </div>
 
