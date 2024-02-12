@@ -6,7 +6,6 @@ use App\Http\Controllers\BeersController;
 use App\Http\Controllers\PubsController;
 use App\Http\Controllers\NavController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProfileController;
 
 
 
@@ -71,6 +70,9 @@ Route::get('/Pubs/{Pub}/details', [PubsController::class, 'details'])->name('Pub
 //HOME CONTROLLER ROUTES
 Route::get('/', [HomeController::class, 'index']);
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
 
 Route::get('/dashboard', function () {
@@ -83,4 +85,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+<<<<<<< HEAD
 require __DIR__.'/auth.php';
+=======
+require __DIR__.'/auth.php';
+>>>>>>> parent of 6690312 (Merge branch 'main' into test)

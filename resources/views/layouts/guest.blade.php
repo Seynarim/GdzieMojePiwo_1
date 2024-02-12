@@ -18,8 +18,12 @@
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
             <div>
                 <a href="/">
+<<<<<<< HEAD
                     
                     <img src="{{ asset('img/header1.png') }}" class="h-8" alt="Gdzie Moje Piwo? Logo" />
+=======
+                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+>>>>>>> parent of 6690312 (Merge branch 'main' into test)
                 </a>
             </div>
 

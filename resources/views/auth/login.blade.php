@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @extends('layouts.main')
 
 @section('content')
@@ -5,6 +6,12 @@
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
     <div class="w-1/2 mx-auto bg-white p-4 mt-8">
+=======
+<x-guest-layout>
+    <!-- Session Status -->
+    <x-auth-session-status class="mb-4" :status="session('status')" />
+
+>>>>>>> parent of 6690312 (Merge branch 'main' into test)
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
@@ -15,7 +22,11 @@
         </div>
 
         <!-- Password -->
+<<<<<<< HEAD
         <div class="w-1/2 mx-auto bg-white p-4 mt-8">
+=======
+        <div class="mt-4">
+>>>>>>> parent of 6690312 (Merge branch 'main' into test)
             <x-input-label for="password" :value="__('Password')" />
 
             <x-text-input id="password" class="block mt-1 w-full"
@@ -27,14 +38,22 @@
         </div>
 
         <!-- Remember Me -->
+<<<<<<< HEAD
         <div class="w-1/2 mx-auto bg-white p-4 mt-8">
+=======
+        <div class="block mt-4">
+>>>>>>> parent of 6690312 (Merge branch 'main' into test)
             <label for="remember_me" class="inline-flex items-center">
                 <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
                 <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
             </label>
         </div>
 
+<<<<<<< HEAD
         <div class="w-1/2 mx-auto bg-white p-4 mt-8">
+=======
+        <div class="flex items-center justify-end mt-4">
+>>>>>>> parent of 6690312 (Merge branch 'main' into test)
             @if (Route::has('password.request'))
                 <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
                     {{ __('Forgot your password?') }}
@@ -46,5 +65,9 @@
             </x-primary-button>
         </div>
     </form>
+<<<<<<< HEAD
 </div>
 @EndSection
+=======
+</x-guest-layout>
+>>>>>>> parent of 6690312 (Merge branch 'main' into test)

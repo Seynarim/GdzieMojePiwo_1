@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 @extends('layouts.main')
 
 @section('content')
 
+=======
+<x-app-layout>
+>>>>>>> parent of 6690312 (Merge branch 'main' into test)
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
@@ -17,6 +21,10 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 
     
 @endsection
+=======
+</x-app-layout>
+>>>>>>> parent of 6690312 (Merge branch 'main' into test)
